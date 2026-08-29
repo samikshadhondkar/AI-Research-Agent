@@ -29,3 +29,12 @@ Does it need a tool?
    Gemini
       ↓
    Final Answer
+
+
+
+
+
+
+Learning Goal
+
+This project is focused on understanding how AI agents work internally — LLM integration, tool calling, decision loops, memory, grounding, and error handling — before moving on to more advanced agent frameworks and architectures.
