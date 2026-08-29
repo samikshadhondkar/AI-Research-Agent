@@ -1,30 +1,31 @@
 # 🤖 AI Research Agent
 
-A beginner-friendly AI agent built from scratch using **Python** and **Google Gemini**.
+A beginner-friendly AI agent built from scratch using **Python and Google Gemini** to understand the core concepts behind AI agents without using frameworks like LangChain.
 
-The goal of this project is to understand how AI agents actually work internally — including LLM interaction, tool calling, conversation memory, and web search — without relying on frameworks such as LangChain.
+## What It Can Do
 
----
+- 💬 Answer natural-language questions using Gemini
+- 🧮 Use a custom **calculator tool** for arithmetic, powers, and roots
+- 🌐 Use **Google Search grounding** for current information
+- 🧠 Maintain **short-term conversation memory** during a session
+- 🔧 Manually handle **LLM → tool call → tool result → LLM** workflows
+- ⚠️ Handle API errors such as quota exhaustion
 
-## 📌 About the Project
-
-This project is a simple AI research assistant that can:
-
-- Understand natural-language questions
-- Generate answers using Google Gemini
-- Perform mathematical calculations using a custom Python tool
-- Search the web using Google Search grounding
-- Remember previous messages during a session
-- Decide when a tool is required
-- Handle API errors such as quota exhaustion gracefully
-
-The agent is intentionally built with a **manual agent loop** so that the underlying concepts are easier to understand.
-
----
-
-## 🧠 What is an AI Agent?
-
-A basic chatbot follows this pattern:
+## How It Works
 
 ```text
-User → LLM → Response
+User
+ ↓
+Gemini
+ ↓
+Does it need a tool?
+ ├── No → Final Answer
+ └── Yes
+      ↓
+   Execute Tool
+      ↓
+   Tool Result
+      ↓
+   Gemini
+      ↓
+   Final Answer
